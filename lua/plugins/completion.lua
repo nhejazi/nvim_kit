@@ -154,7 +154,7 @@ return {
     end,
   },
 
-  { -- gh copilot
+  { -- GitHub copilot
     'zbirenbaum/copilot.lua',
     enabled = true,
     config = function()

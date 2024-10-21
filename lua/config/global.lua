@@ -2,6 +2,10 @@
 
 local animals = require('misc.style').animals
 
+-- disable netrw at the very start of init.lua (for nvim-tree)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- proper colors
 vim.opt.termguicolors = true
 

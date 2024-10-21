@@ -1,6 +1,6 @@
 return {
 
-  -- disables hungry features for files larget than 2MB
+  -- disables hungry features for files larger than 2MB
   { 'LunarVim/bigfile.nvim' },
 
   -- add/delete/change can be done with the keymaps
@@ -30,7 +30,8 @@ return {
     'stevearc/conform.nvim',
     enabled = true,
     keys = {
-      { '<leader>cf', '<cmd>lua require("conform").format()<cr>', desc = "[f]ormat" },
+      { '<leader>cf', '<cmd>lua require("conform").format()<cr>',
+        desc = "[f]ormat" },
     },
     config = function()
       require('conform').setup {
@@ -58,7 +59,7 @@ return {
           -- Set to true to ignore errors
           ignore_errors = false,
           -- Map of treesitter language to file extension
-          -- A temporary file name with this extension will be generated during formatting
+          -- A temporary file name will be generated during formatting
           -- because some formatters care about the filename.
           lang_to_ext = {
             bash = 'sh',
