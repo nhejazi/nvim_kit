@@ -1,18 +1,36 @@
 return {
-  { 'shaunsingh/nord.nvim', enabled = false, lazy = false, priority = 1000 },
-  { 'folke/tokyonight.nvim', enabled = false, lazy = false, priority = 1000 },
-  { 'EdenEast/nightfox.nvim', enabled = false, lazy = false, priority = 1000 },
+  { 'shaunsingh/nord.nvim',
+    name = "nord",
+    enabled = true,
+    lazy = false,
+    priority = 1000
+  },
+
+  { "rose-pine/neovim",
+    name = "rose-pine",
+    enabled = false,
+    lazy = false,
+    priority = 1000
+  },
+
+  { 'folke/tokyonight.nvim',
+    enabled = false,
+    lazy = false,
+    priority = 1000
+  },
+
   {
     'catppuccin/nvim',
     name = 'catppuccin',
     enabled = false,
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
+    lazy = false, -- make sure to load in startup if using as main colorscheme
+    priority = 1000, -- make sure to load before all the other start plugins
     config = function()
       -- set colorscheme and overwrite highlights
       vim.cmd.colorscheme 'catppuccin-mocha'
       local colors = require 'catppuccin.palettes.mocha'
-      vim.api.nvim_set_hl(0, 'Tabline', { fg = colors.green, bg = colors.mantle })
+      vim.api.nvim_set_hl(0, 'Tabline', { fg = colors.green,
+                                          bg = colors.mantle })
       vim.api.nvim_set_hl(0, 'TermCursor', { fg = '#A6E3A1', bg = '#A6E3A1' })
     end,
   },
@@ -52,24 +70,10 @@ return {
     end,
   },
 
-  {
-    'olimorris/onedarkpro.nvim',
-    enabled = false,
-    lazy = false,
-    priority = 1000,
-  },
-
-  {
-    'neanias/everforest-nvim',
-    enabled = false,
-    lazy = false,
-    priority = 1000,
-  },
-
   -- color html colors
   {
     'NvChad/nvim-colorizer.lua',
-    enabled = true,
+    enabled = false,
     opts = {
       filetypes = { '*' },
       user_default_options = {

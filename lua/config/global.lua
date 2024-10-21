@@ -33,8 +33,8 @@ vim.opt.shiftwidth = tabsize
 vim.opt.tabstop = tabsize
 
 -- space as leader
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = ','
+vim.g.maplocalleader = ','
 
 -- smarter search
 vim.opt.ignorecase = true
@@ -55,6 +55,9 @@ vim.opt.signcolumn = 'yes:1'
 
 -- how to show autocomplete menu
 vim.opt.completeopt = 'menuone,noinsert'
+
+-- set marker for 80 columns
+vim.opt.colorcolumn = '80'
 
 -- global statusline
 vim.opt.laststatus = 3

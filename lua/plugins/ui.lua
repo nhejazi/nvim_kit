@@ -1,6 +1,6 @@
 return {
   -- telescope
-  -- a nice seletion UI also to find and open files
+  -- a nice selection UI also to find and open files
   {
     'nvim-telescope/telescope.nvim',
     dependencies = {
@@ -136,9 +136,8 @@ return {
   },
 
   { -- statusline
-    -- PERF: I found this to slow down the editor
     'nvim-lualine/lualine.nvim',
-    enabled = false,
+    enabled = true,
     config = function()
       local function macro_recording()
         local reg = vim.fn.reg_recording()
@@ -151,6 +150,7 @@ return {
       ---@diagnostic disable-next-line: undefined-field
       require('lualine').setup {
         options = {
+          theme = 'nord',
           section_separators = '',
           component_separators = '',
           globalstatus = true,
@@ -217,22 +217,6 @@ return {
         },
       }
     end,
-  },
-
-  -- or a different filetree
-  {
-    'nvim-neo-tree/neo-tree.nvim',
-    enabled = false,
-    branch = 'v3.x',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
-      'MunifTanjim/nui.nvim',
-    },
-    cmd = 'Neotree',
-    keys = {
-      { '<c-b>', ':Neotree toggle<cr>', desc = 'toggle nvim-tree' },
-    },
   },
 
   -- show keybinding help window
@@ -353,7 +337,7 @@ return {
     ft = { 'markdown', 'quarto', 'vimwiki' },
     cond = function()
       -- Disable on Windows system
-       return vim.fn.has 'win32' ~= 1 
+       return vim.fn.has 'win32' ~= 1
     end,
     dependencies = {
        'leafo/magick', -- that's a lua rock
