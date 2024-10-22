@@ -303,7 +303,7 @@
     "body": ["display(Markdown(\"\"\"", "{$1}", "\"\"\".format($1 = $1)))", ""]
   },
   "bibliography": {
-    "body": "bibliography: references.bib",
+    "body": "bibliography: refs.bib",
     "description": "add bibliography yaml",
     "prefix": "bib"
   },
